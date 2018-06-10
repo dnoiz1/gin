@@ -1,6 +1,8 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
+from __future__ import print_function
+
 "gin - a Git index file parser"
-version = "0.1.006"
+__version__ = "0.1.009"
 
 # https://github.com/git/git/blob/master/Documentation/technical/index-format.txt
 

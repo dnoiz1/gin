@@ -1,15 +1,16 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import distutils.core
 import os.path
 import sys
 
 if __name__ == "__main__":
-    README = "https://github.com/sbp/gin/blob/master/README.md"
+    README = "https://github.com/dnoiz1/gin2/blob/master/README.md"
 
-    if os.path.isfile("gin"):
-        with open("gin", "r+", encoding="ascii") as f:
-            f.seek(66)
+    if os.path.isfile("gin2/gin2.py"):
+        with open("gin2/gin2.py", "r+") as f:
+            # this is actually wot pls no
+            f.seek(108)
             version = f.read(7)
 
             if os.path.isdir(".git") and ("sdist" in sys.argv):
@@ -18,7 +19,7 @@ if __name__ == "__main__":
                    raise ValueError("Update major/minor version")
                 version = version[:-3] + "%03i" % patch
 
-                f.seek(66)
+                f.seek(108)
                 f.write(version)
     else:
         print("Unable to find gin script: refusing to install")
@@ -27,15 +28,15 @@ if __name__ == "__main__":
     distutils.core.setup(
         name="gin",
         version=version,
-        author="Sean B. Palmer",
-        url="https://github.com/sbp/gin",
+        author=["Sean B. Palmer", "Tim Noise"],
+        url="https://github.com/dnoiz1",
         description="Git index file parser",
-        long_description="Documented in `@sbp/gin/README.md <%s>`_" % README,
-        scripts=["gin"],
+        long_description="Documented in `@dnoiz1/gin2/README.md <%s>`_" % README,
+        packages=["gin2"],
         platforms="Linux and OS X",
         classifiers=[
             "Operating System :: MacOS :: MacOS X",
             "Operating System :: POSIX",
-            "Programming Language :: Python :: 3"
+            "Programming Language :: Python :: 2"
         ]
     )

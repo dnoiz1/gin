@@ -1,16 +1,20 @@
 # gin - a Git index file parser
 
-The `gin` script parses the databases that live at `.git/index` in any Git repository, and shows the contents in a readable form, or as a JSON dump. These databases store the current state of the stage area, sometimes called the index or cache.
+# WARNING: this is a python2 fork
+for the original gin python3 package see: https://github.com/sbp/gin
+this version is meant to be used as a library, unlike the original version
+
+The `gin2` script parses the databases that live at `.git/index` in any Git repository, and shows the contents in a readable form, or as a JSON dump. These databases store the current state of the stage area, sometimes called the index or cache.
 
 ## Install
 
-    pip3 install gin
+    pip install gin2
 
-Or clone this repo and use the `gin` script.
+Or clone this repo and use the `gin2/gin2.py` script.
 
 Or download the script directly.
 
-The script requires Python 3.
+The script requires Python 2.
 
 ## Use
 
@@ -32,27 +36,24 @@ optional arguments:
 
 *   Show the Git index file in the current repository, if in the repository root:
 
-        gin
+        gin2.py
 
 *   Show the Git index file in the `~/git-repo` repository:
 
-        gin ~/git-repo    
+        gin2.py ~/git-repo
 
 *   Show the Git index file `~/git-repo/.git/index`:
 
-        gin ~/git-repo/.git/index
+        gin2.py ~/git-repo/.git/index
 
 The script supports index file versions 2 and 3, and will skip over extensions.
 
 Use the `-j` or `--json` flags to dump JSON.
 
-### Advanced
-
-To use the script as a module, rename it to `gin.py`.
-
 ## Report issues
 
 [Submit issues](https://github.com/sbp/gin/issues) on Github.
+(but please open a relevant ticket here aLso :)
 
 Tweet [@sbp](https://twitter.com/sbp) with short comments or enquiries.
 
@@ -60,7 +61,7 @@ Tweet [@sbp](https://twitter.com/sbp) with short comments or enquiries.
 
 ### Pretty print an index
 
-    $ gin test/01.index
+    $ gin2.py test/01.index
 
 Output:
 

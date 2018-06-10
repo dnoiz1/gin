@@ -2,7 +2,7 @@ SHELL = /bin/sh
 
 .PHONY: publish
 publish:
-	python3 setup.py sdist --formats=bztar upload
+	python setup.py sdist --formats=bztar upload
 	rm -rf dist/
 	git add -A
 	git commit -m "Published `egrep -m1 '^version' gin | cut -b12-18`"
